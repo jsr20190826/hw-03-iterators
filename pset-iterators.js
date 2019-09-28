@@ -43,6 +43,11 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+//  find the first president that was a member of the party named Whig
+const firstWhigPresident = presidents.find(selectedPresidentObj => selectedPresidentObj.party === 'Whig')
+// print to console
+console.log(firstWhigPresident.president)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -66,6 +71,14 @@ console.log('Problem 2:')
 
 // Add your code below this line
 
+//  Get a list of presidents whos first name is James
+const presidentsNamedJames = presidents.filter(presidentObj => {
+  //  presidentObj.president.split(' ') is the president name split into an array
+  //  first name is stored at [0] index
+  return presidentObj.president.split(' ')[0] === 'James'
+})
+
+console.log(presidentsNamedJames)
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -93,6 +106,9 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+//  grab all presidential party names from presidents object and print to console
+const presidentialParties = presidents.map(presidentObj => presidentObj.party)
+console.log(presidentialParties)
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -115,6 +131,14 @@ console.log('Problem 4:')
 
 // Add your code below this line
 
+//  grab list of presidents that were in office between 1850 and 1900
+const presidentsBetween1850and1900 = presidents.filter(presidentObj => {
+  //  presidentObj.took_office.split('-')[0] = year the president took office
+  return (presidentObj.took_office.split('-')[0] > 1850) & (presidentObj.took_office.split('-')[0] < 1900)
+})
+
+//  print to console
+console.log(presidentsBetween1850and1900)
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -137,6 +161,12 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 5:')
 
 // Add your code below this line
+
+//  grab list of presidents that have no death year listed
+const livingPresidents = presidents.filter(presidentObj => presidentObj.death_year === null)
+
+//  print to console
+console.log(livingPresidents)
 
 // Add your code above this line
 
@@ -161,6 +191,12 @@ console.log('Problem 6:')
 
 // Add your code below this line
 
+//  find the first repblican president listed in the presidents Object
+const firstRepublican = presidents.find(presidentObj => presidentObj.party === 'Republican')
+
+//  print their name to console
+console.log(firstRepublican.president)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -184,6 +220,21 @@ console.log('Problem 7:')
 
 // Add your code below this line
 
+//  grab a list of presidents who have been in office for less than 4 years
+const shortTermPresidents = presidents.filter(presidentObj => {
+  if (presidentObj.left_office === null) {
+    //  if the president never left office, calculate based off the cufrent year (2019)
+    return (2019 - presidentObj.took_office.split('-')[0]) < 4
+  } else {
+    //  below line calculates the year the president took office minus
+    //  the year the president left office and retuns the object if the Result
+    //  is less than 4
+    return (presidentObj.left_office.split('-')[0] - presidentObj.took_office.split('-')[0]) < 4
+  }
+})
+
+//  print to console
+console.log(shortTermPresidents)
 // Add your code above this line
 
 /** added for formatting purposes **/
