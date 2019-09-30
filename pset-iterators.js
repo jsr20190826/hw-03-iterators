@@ -71,6 +71,13 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 2:')
 
 // Add your code below this line
+// let findName = "James"
+const presidentsNamedJames = presidents.filter((presidentJames) => {
+
+  return presidentJames.president.includes("James")
+})
+
+console.log(presidentsNamedJames)
 
 // Add your code above this line
 
