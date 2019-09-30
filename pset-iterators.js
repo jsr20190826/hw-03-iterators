@@ -106,6 +106,10 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+const presidentialParties = presidents.map(p => p.party)
+
+console.log(presidentialParties)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
