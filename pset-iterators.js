@@ -43,6 +43,12 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+const firstWhigPresident = presidents.find(function (parties) {
+  return parties.party === "Whig"
+})
+
+console.log(firstWhigPresident.president)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
