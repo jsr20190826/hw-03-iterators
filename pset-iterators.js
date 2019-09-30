@@ -43,6 +43,14 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+const firstWhigPresident = presidents.find(function (president) {
+  return president.party === 'Whig'
+})
+
+console.log(firstWhigPresident.president)
+
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -65,6 +73,15 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 2:')
 
 // Add your code below this line
+
+
+const findpresidentsNamedJames = presidents.filter(function (president) {
+  return president.president.indexOf("James") >= 0
+
+})
+
+console.log(findpresidentsNamedJames)
+
 
 // Add your code above this line
 
@@ -93,6 +110,18 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+let presidentialParties = []
+
+const findpresidentialParties = presidents.filter(function (president) {
+
+  presidentialParties.push(president.party)
+
+})
+
+console.log(presidentialParties)
+console.log(presidentialParties.length)
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -114,6 +143,25 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 4:')
 
 // Add your code below this line
+
+
+const presidentsBetween1850and1900 = presidents.filter(function (president){
+
+ if ((president.took_office.substring(0, 4) >= "1850") && (president.took_office.substring(0, 4) < "1900")) {
+
+//   console.log(president.took_office.substring(0, 4))
+  return president
+
+ } else {
+//   console.log("add nothing")
+  return
+ }
+
+
+})
+
+console.log(presidentsBetween1850and1900)
+
 
 // Add your code above this line
 
@@ -138,6 +186,13 @@ console.log('Problem 5:')
 
 // Add your code below this line
 
+
+const livingPresidents = presidents.filter( president =>{
+  return president.death_year === null
+})
+
+console.log(livingPresidents)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -161,6 +216,13 @@ console.log('Problem 6:')
 
 // Add your code below this line
 
+const firstRepublican = presidents.find(function (president) {
+  return president.party === 'Republican'
+})
+
+console.log(firstRepublican.president)
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -183,6 +245,38 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 7:')
 
 // Add your code below this line
+
+let tookOfficeYear = 0
+let leftOfficeYear = 0
+
+const shortTermPresidents = presidents.filter(function (president){
+
+  tookOfficeYear = president.took_office.substring(0, 4)
+// console.log("--------------")
+// console.log(president.took_office.substring(0, 4))
+
+  if (president.left_office === null) {
+      var d = new Date();
+      president.left_office = d.getFullYear();
+//      console.log(president.left_office)
+
+  } else {
+      leftOfficeYear = president.left_office.substring(0, 4)
+//    console.log(president.left_office)
+  }
+
+  if (leftOfficeYear - tookOfficeYear < 4) {
+
+    return president
+
+  } else {
+//   console.log("less than for years")
+   return
+  }
+})
+
+console.log(shortTermPresidents)
+
 
 // Add your code above this line
 
