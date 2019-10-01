@@ -43,7 +43,7 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
-const firstWhigPresident = presidents.find(function (parties) {
+const firstWhigPresident = presidents.find(function(parties) {
   return parties.party === "Whig"
 })
 
@@ -198,6 +198,10 @@ Expected Result Shape: A string representing the full name of the president that
 console.log('Problem 6:')
 
 // Add your code below this line
+
+const firstRepublican = presidents.find(president => (president.party === "Republican"))
+
+console.log(firstRepublican);
 
 // Add your code above this line
 
