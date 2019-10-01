@@ -71,9 +71,8 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 2:')
 
 // Add your code below this line
-// let findName = "James"
-const presidentsNamedJames = presidents.filter((presidentJames) => {
 
+const presidentsNamedJames = presidents.filter((presidentJames) => {
   return presidentJames.president.includes("James")
 })
 
@@ -132,6 +131,24 @@ console.log('Problem 4:')
 
 // Add your code below this line
 
+// let str = presidents.filter((president) => {
+//   return president.parseInt(str, 10)
+// })
+//
+// console.log(str);
+
+// const presidentsBetween1850and1900 = presidents.filter((president) => {
+//   return president.took_office.includes("1850-")
+//  })
+
+// const presidentsBetween1850and1900 = presidents.filter(function(president) {
+//   if (president.took_office >= 1850 && president.took_office <= 1900) {
+//     return president.took_office
+//   }
+// })
+
+// console.log(presidentsBetween1850and1900);
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -154,6 +171,10 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 5:')
 
 // Add your code below this line
+
+const livingPresidents = presidents.filter(president => (president.death_year === null))
+
+console.log(livingPresidents);
 
 // Add your code above this line
 
