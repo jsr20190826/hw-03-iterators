@@ -131,23 +131,11 @@ console.log('Problem 4:')
 
 // Add your code below this line
 
-// let str = presidents.filter((president) => {
-//   return president.parseInt(str, 10)
-// })
-//
-// console.log(str);
+const presidentsBetween1850and1900 = presidents.filter((president) => {
+  return parseInt(president.took_office) > 1849 && parseInt(president.took_office) < 1901
+})
 
-// const presidentsBetween1850and1900 = presidents.filter((president) => {
-//   return president.took_office.includes("1850-")
-//  })
-
-// const presidentsBetween1850and1900 = presidents.filter(function(president) {
-//   if (president.took_office >= 1850 && president.took_office <= 1900) {
-//     return president.took_office
-//   }
-// })
-
-// console.log(presidentsBetween1850and1900);
+console.log(presidentsBetween1850and1900);
 
 // Add your code above this line
 
@@ -225,6 +213,18 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 7:')
 
 // Add your code below this line
+
+// const shortTermPresidents = presidents.filter((president) => {
+//   return parseInt(president.took_office)
+// })
+
+// const shortTermPresidents = presidents.filter((president) => {
+//   return parseInt(president.took_office.left_office) === president.left_office - president.took_office < 4
+// })
+
+// const shortTermPresidents = presidents.filter(president => (president.left_office - president.took_office < 4))
+
+// console.log(shortTermPresidents);
 
 // Add your code above this line
 
