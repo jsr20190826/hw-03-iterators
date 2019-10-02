@@ -43,7 +43,10 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
-const firstWhigPresident = presidents.find(president => {return president.party === "Whig"})
+const firstWhigPresident = presidents.find(president => {
+  return president.party === "Whig"
+  })
+
 console.log(firstWhigPresident.president)
 
 // Add your code above this line
@@ -68,6 +71,16 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 2:')
 
 // Add your code below this line
+
+const presidentsNamedJames = presidents.filter(president => {
+    if(president.president.includes("James") === true){
+      return president
+    }
+  // if true is returned, item is returned and iteration is stopped
+  // for falsy scenario returns undefined
+})
+
+console.log(presidentsNamedJames)
 
 // Add your code above this line
 
