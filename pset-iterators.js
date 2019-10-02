@@ -43,6 +43,9 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+const firstWhigPresident = presidents.find(president => {return president.party === "Whig"})
+console.log(firstWhigPresident.president)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
