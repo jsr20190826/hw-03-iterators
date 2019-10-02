@@ -223,9 +223,22 @@ Expected Result Shape: An array of objects (with each object representing a pres
 ************/
 console.log('Problem 7:')
 
+const previousPresidents = presidents.filter(president => {
+  if(president.left_office !== null){
+    return president
+  }
+})
 // Add your code below this line
+const shortTermPresidents = previousPresidents.filter(president => {
+  const tookOffice = parseInt(president.took_office.substring(0,4))
+  const leftOffice = parseInt(president.left_office.substring(0,4))
 
+  if(leftOffice - tookOffice < 4){
+    return president
+  }
+})
 
+console.log(shortTermPresidents)
 
 // Add your code above this line
 
