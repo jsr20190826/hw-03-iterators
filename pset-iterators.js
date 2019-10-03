@@ -214,17 +214,22 @@ console.log('Problem 7:')
 
 // Add your code below this line
 
-// const shortTermPresidents = presidents.filter((president) => {
-//   return parseInt(president.took_office)
-// })
+const previousPresidents = presidents.filter(president => {
+  if(president.left_office !== null){
+    return president
+  }
+})
 
-// const shortTermPresidents = presidents.filter((president) => {
-//   return parseInt(president.took_office.left_office) === president.left_office - president.took_office < 4
-// })
+const shortTermPresidents = previousPresidents.filter(president => {
+  const tookOffice = parseInt(president.took_office.substring(0,4))
+  const leftOffice = parseInt(president.left_office.substring(0,4))
 
-// const shortTermPresidents = presidents.filter(president => (president.left_office - president.took_office < 4))
+  if(leftOffice - tookOffice < 4){
+    return president
+  }
+})
 
-// console.log(shortTermPresidents);
+console.log(shortTermPresidents)
 
 // Add your code above this line
 
